@@ -2,6 +2,47 @@
 const birthday = new Date(2026, 10, 7, 0, 0, 0); // Month is zero-based: 10 = November.
 const $ = (selector) => document.querySelector(selector);
 
+// Background music: start only after a real user gesture (required by mobile browsers).
+const backgroundMusic = $("#backgroundMusic");
+const musicToggle = $("#musicToggle");
+const musicIcon = $("#musicIcon");
+const musicLabel = $("#musicLabel");
+
+function updateMusicButton(isPlaying) {
+  musicToggle.setAttribute("aria-pressed", String(isPlaying));
+  musicToggle.setAttribute("aria-label", isPlaying ? "Pause background music" : "Play background music");
+  musicToggle.title = isPlaying ? "Pause music" : "Play music";
+  musicIcon.textContent = isPlaying ? "Ⅱ" : "♫";
+  musicLabel.textContent = isPlaying ? "Pause music" : "Play music";
+  musicToggle.classList.toggle("is-playing", isPlaying);
+}
+
+async function playBackgroundMusic() {
+  if (!backgroundMusic) return;
+  try {
+    // Calling play() directly from the click handler preserves the browser's user-gesture permission.
+    await backgroundMusic.play();
+    updateMusicButton(true);
+  } catch (error) {
+    updateMusicButton(false);
+    musicLabel.textContent = "Tap to play";
+    console.warn("Background music could not start:", error);
+  }
+}
+
+function pauseBackgroundMusic() {
+  backgroundMusic.pause();
+  updateMusicButton(false);
+}
+
+musicToggle.addEventListener("click", () => {
+  if (backgroundMusic.paused) playBackgroundMusic();
+  else pauseBackgroundMusic();
+});
+backgroundMusic.addEventListener("play", () => updateMusicButton(true));
+backgroundMusic.addEventListener("pause", () => updateMusicButton(false));
+backgroundMusic.addEventListener("ended", () => updateMusicButton(false));
+
 function updateCountdown() {
   const now = new Date();
   let target = birthday;
@@ -28,7 +69,9 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 $("#enterButton").addEventListener("click", () => {
-  $("#countdown").scrollIntoView({ behavior: "smooth" });
+  // This button is also a user gesture, so mobile Safari/Chrome can start the song here.
+  if (backgroundMusic.paused) playBackgroundMusic();
+  $("#countdown").scrollIntoView({ behavior: "smooth", block: "start" });
   burstHearts(12);
 });
 
