@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff0f6" />
+  <meta name="description" content="A little birthday universe made with love for Mushfika." />
+  <title>For Mushfika ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sparkle-layer" aria-hidden="true"></div>
+  <!-- BACKGROUND MUSIC: put your MP3 at assets/audio/birthday-song.mp3 -->
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="assets/audio/birthday-song.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Play background music" title="Play music">
+    <span id="musicIcon">♫</span><span id="musicLabel">Play music</span>
+  </button>
+
+  <main>
+    <section class="hero screen" id="home">
+      <div class="moon"></div>
+      <div class="hero-stars" aria-hidden="true">✦　 ·　 ✧　　 ✦　 ·　 ✧</div>
+      <div class="hero-content">
+        <div class="cat-badge" aria-label="Cute cat with a pink bow">
+          <span class="cat-face">♡</span><span class="bow">🎀</span>
+        </div>
+        <p class="eyebrow">A tiny universe, made just for you</p>
+        <h1>Hey, <span>Mushfika</span>!</h1>
+        <p class="hero-copy">Someone has been planning a little surprise<br>for the most special girl in his universe.</p>
+        <button class="button button-primary" id="enterButton">Open your surprise <span>♡</span></button>
+        <p class="music-hint">A little song is waiting too — tap to play 🎶</p>
+        <p class="tiny-note">made with endless love by Asif</p>
+      </div>
+      <div class="bottom-cloud cloud-one"></div><div class="bottom-cloud cloud-two"></div>
+    </section>
+
+    <section class="section countdown-section" id="countdown">
+      <div class="section-heading">
+        <p class="eyebrow">The day the world got sweeter</p>
+        <h2>It's your day, <em>pretty girl</em>!</h2>
+        <p>Every day is special because you exist. Today is extra special.</p>
+      </div>
+      <div class="countdown-card">
+        <div class="countdown-top">Counting moments until your birthday</div>
+        <div class="countdown-grid">
+          <div><strong id="days">00</strong><span>Days</span></div>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+        <p class="countdown-caption" id="countdownCaption">A whole day to celebrate you ♡</p>
+      </div>
+    </section>
+
+    <section class="section letter-section" id="letter">
+      <div class="letter-card">
+        <div class="letter-stamp">🎀</div>
+        <p class="eyebrow">A little something from my heart</p>
+        <h2>To my <em>Mushfika</em></h2>
+        <div class="letter-body">
+          <p>My bubbzuuu,</p>
+          <p>Happy birthday to the girl who makes my ordinary days feel magical. I wish I could put into words how much you mean to me, but somehow every word feels too small.</p>
+          <p>Thank you for being you — for your smile, your little ways, your warmth, and for making my world a happier place. I hope this new year brings you all the love, peace, laughter and beautiful things your heart deserves.</p>
+          <p>No matter how many birthdays come and go, I hope I get to keep cheering for you, annoying you, making memories with you, and reminding you how loved you are.</p>
+          <p class="signature">Always yours,<br><span>Asif ♡</span></p>
+        </div>
+        <div class="letter-footer">sealed with a million kisses 💗</div>
+      </div>
+    </section>
+
+    <section class="section memories-section" id="memories">
+      <div class="section-heading">
+        <p class="eyebrow">Little moments, big feelings</p>
+        <h2>Our tiny <em>memory lane</em></h2>
+        <p>Some moments deserve to stay close forever.</p>
+      </div>
+      <div class="memory-grid">
+        <!-- PHOTO PLACEHOLDERS: add your pictures in assets/photos/ and update the src paths below. -->
+        <figure class="memory-card memory-tall">
+          <img src="assets/photos/photo-1.jpg" alt="A favourite picture of us" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="photo-placeholder">📸<span>Add your favourite photo here</span></div>
+          <figcaption>My favourite view ♡</figcaption>
+        </figure>
+        <figure class="memory-card">
+          <img src="assets/photos/photo-2.jpg" alt="A sweet memory" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="photo-placeholder">🌷<span>Add another memory</span></div>
+          <figcaption>A moment to keep</figcaption>
+        </figure>
+        <figure class="memory-card">
+          <img src="assets/photos/photo-3.jpg" alt="A happy memory" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="photo-placeholder">💗<span>One more favourite</span></div>
+          <figcaption>Us being us</figcaption>
+        </figure>
+      </div>
+      <div class="video-card">
+        <div>
+          <p class="eyebrow">Press play, love</p>
+          <h3>A little video just for you</h3>
+          <p class="muted">Our First Ever video Together of us just being us.</p>
+        </div>
+        <!-- VIDEO PLACEHOLDER: put your video at assets/videos/our-moments.mp4 -->
+        <video controls playsinline preload="metadata" poster="assets/photos/video-cover.jpg">
+          <source src="assets/videos/our-moments.mp4" type="video/mp4">
+          Your browser does not support this video.
+        </video>
+      </div>
+    </section>
+
+    <section class="section cake-section" id="cake">
+      <div class="section-heading">
+        <p class="eyebrow">Make a birthday wish</p>
+        <h2>A cake just for <em>you</em></h2>
+        <p>Tap the candles to blow them out. Don't forget your wish!</p>
+      </div>
+      <div class="cake-scene">
+        <div class="candles">
+          <button class="candle lit" aria-label="Blow out candle 1"><i></i></button>
+          <button class="candle lit" aria-label="Blow out candle 2"><i></i></button>
+          <button class="candle lit" aria-label="Blow out candle 3"><i></i></button>
+          <button class="candle lit" aria-label="Blow out candle 4"><i></i></button>
+          <button class="candle lit" aria-label="Blow out candle 5"><i></i></button>
+        </div>
+        <div class="cake"><div class="icing"></div><div class="cake-heart">♡</div></div>
+        <div class="cake-plate"></div>
+      </div>
+      <p class="wish-message" id="wishMessage">Five little candles, five big wishes for you ✨</p>
+      <button class="button button-secondary" id="wishButton">Make a wish ♡</button>
+    </section>
+
+    <section class="section gift-section" id="gift">
+      <div class="gift-wrap" id="giftWrap" role="button" tabindex="0" aria-label="Open your birthday gift">
+        <div class="gift-lid"><span></span></div><div class="gift-box"><span class="ribbon"></span></div>
+        <div class="gift-bow">🎀</div>
+      </div>
+      <p class="eyebrow">One last surprise</p>
+      <h2>There's a little gift <em>for you</em></h2>
+      <p class="gift-hint">Tap the present to open it.</p>
+      <div class="final-message" id="finalMessage" hidden>
+        <div class="final-heart">♡</div>
+        <h3>Happy birthday, my love!</h3>
+        <p>Mushfika, I hope you never forget how precious you are. Keep smiling, keep shining, and never stop being the beautiful soul you are.</p>
+        <p class="final-sign">I love you more than words can say.<br><strong>— Your Asif 💗</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with ♡, a little bit of magic, and lots of love by Asif.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

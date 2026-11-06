@@ -1,0 +1,3 @@
+Add your chosen MP3 here and name it birthday-song.mp3
+Expected path: assets/audio/birthday-song.mp3
+The page has a music toggle and attempts to start playback after the visitor clicks Open your surprise.
